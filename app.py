@@ -12,7 +12,8 @@ def hello():
 @app.route('/poem')
 def poem():
     poem = poembot.generate_poem()
-    return poem
+    return render_template('poems.html', poem=poem)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
